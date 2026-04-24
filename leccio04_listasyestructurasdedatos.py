@@ -343,3 +343,46 @@ for numero, fruta in enumerate(frutas, start=1):
 # ? =================================================
 # ! 14. UNIR LISTAS CON OPERADORES
 # ? =================================================
+
+print('\n=== Operadores con Listas ===')
+
+# Concatenar con +
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+
+lista_combinada = lista1 + lista2
+print(f'Concatenación: {lista_combinada}')
+
+# Repetir con *
+repetida = [1, 2] * 3
+print(f'Repetición: {repetida}')     # [1, 2, 1, 2, 1, 2]
+
+# ? =================================================
+# ! 15. CONVERTIR ENTRE TIPOS
+# ? =================================================
+
+print('\n=== Conversiones ===')
+
+# String a lista de caracteres
+palabra = 'Python'
+letras = list(palabra)
+print(f'String a lista: {letras}')     # ['P', 'y', 't', 'h', 'o', 'n']
+
+# Lista a String
+lista_letras = ['H', 'o', 'l', 'a']
+palabra = ''.join(lista_letras)     # join() une elementos
+print(f'Lista a string: {palabra}')     # Hola
+
+# Con separador
+numeros_texto = ['1', '2', '3']
+resultado = "-".join(numeros_texto)  # join() une elementos por guiones
+print(f'Con separador: {resultado}')     # "1-2-3"
+
+# Split - String a lista
+frase = 'Hola mundo desde Python'
+palabras = frase.split()     # split() Divide por espacios cada palabra
+print(f'Split: {palabras}')     # ['Hola', 'mundo', 'desde', 'Python']
+
+frase_csv = 'manzana, banana, naranja'
+frutas = frase_csv.split(',')     # Divide por comas cada palabra
+print(f"Split por coma: {frutas}")  # ['manzana', ' banana', ' naranja']
