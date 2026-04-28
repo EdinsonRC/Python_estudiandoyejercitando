@@ -386,3 +386,57 @@ print(f'Split: {palabras}')     # ['Hola', 'mundo', 'desde', 'Python']
 frase_csv = 'manzana, banana, naranja'
 frutas = frase_csv.split(',')     # Divide por comas cada palabra
 print(f"Split por coma: {frutas}")  # ['manzana', ' banana', ' naranja']
+
+# ! =================================================
+# * EJEMPLO PRÁCTICO: SISTEMA DE INVENTARIO
+# ! =================================================
+print('='*50)
+print('SISTEMA DE INVENTARIO'.center(50))
+print('='*50)
+
+inventario = []     # * Lista vacia para guardar productos
+
+while True:
+  print('\n1. Agregar producto')
+  print('2. Ver inventario')
+  print('3. Buscar producto')
+  print('4. Eliminar producto')
+  print('5. Salir')
+  
+  opcion = input('\nElige una opción: ')
+  
+  if opcion == '1':
+    producto = input('Nombre del producto: ')
+    inventario.append(producto)
+    print(f'"{producto}" agregado al inventario')
+    
+  elif opcion == '2':
+    if len(inventario) == 0:
+      print('El inventario esta vacio')
+    else:
+      print(f'\n Inventario ({len(inventario)} productos): ')
+      for i, producto in enumerate(inventario, start=1):
+        print(f'{i}. {producto}')
+  elif opcion == '3':
+    buscar = input('¿Qué producto buscas?: ')
+    if buscar in inventario:
+      indice = inventario.index(buscar)
+      print(f'"{buscar}" está en la posición {indice + 1}')
+    else:
+      print(f'"{buscar}" no está en el inventario')
+      
+  elif opcion == '4':
+    eliminar = input('¿Qué producto quieres eliminar?: ')
+    if eliminar in inventario:
+      inventario.remove(eliminar)
+      print(f'"{eliminar}" eliminado del inventario')
+    else:
+      print('"{eliminar}" no esta en el inventario')
+  
+  elif opcion == '5':
+    print('\n¡Hasta luego!')
+    break
+  
+  else:
+    print('Opción invalida')
+    
